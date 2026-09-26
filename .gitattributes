@@ -1,0 +1,12 @@
+# Texto sempre com LF dentro do repositorio (Windows e Linux enxergam igual; o CI roda em Linux)
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+# binarios: nunca converter
+*.png binary
+*.jpg binary
+*.pdf binary
+*.pptx binary
+*.docx binary
+*.xlsx binary

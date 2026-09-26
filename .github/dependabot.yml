@@ -1,0 +1,9 @@
+# Avisa por pull request quando uma action do CI tem versao nova ou falha de seguranca.
+# O pacote nao tem dependencia externa: so biblioteca padrao.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3

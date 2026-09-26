@@ -1,0 +1,31 @@
+# Testes a cada push na main e a cada pull request, na versao minima e na mais nova do Python.
+# O gate de sigilo NAO roda aqui de proposito: a lista de termos nunca sai da maquina do dono.
+name: testes
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: testes-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      matrix:
+        python: ["3.10", "3.13"]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Testes
+        run: python -W error::ResourceWarning -m unittest discover -s testes -t . -v

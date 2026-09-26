@@ -1,0 +1,45 @@
+# ---- dados e segredos: nada disso entra no repositorio ----
+.env
+.env.*
+*.key
+*.pem
+*.pfx
+*.p12
+*.ost
+*.pst
+segredos*
+credenciais*
+token*.json
+*_secrets.*
+appsettings*.json
+local.settings.json
+
+# ---- material de cliente e de empregador ----
+_fonte (nao compartilhar)/
+dados/
+*.xlsx
+*.xlsm
+*.csv
+*.tsv
+*.eml
+*.msg
+*.pst
+
+# ---- saida gerada ----
+*.pdf
+*.pptx
+*.docx
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+dist/
+build/
+
+# ---- ruido de sistema ----
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# ---- saida do kaidoc ----
+saida/
